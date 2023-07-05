@@ -1,0 +1,64 @@
+dialog {
+  opacity: 0;
+  scale: 0;
+  display: block;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+}
+
+dialog[open] {
+  opacity: 1;
+  scale: 2;
+}
+
+.modal-content {
+  background-color: #1b2b2b;
+  border: 3px solid #f85d37;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #b3bbb9;
+  border-radius: 8px;
+}
+.modal-content button {
+  border: 1px solid #f85d37;
+  background-color: #f7c21e;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  margin-top: 1rem;
+}
+.modal-content button:hover {
+  background-color: #cb4532;
+  border-color: #f7c21e;
+  color: white;
+}
+.modal-content input {
+  background-color: #f3ca9b;
+  border: 2px solid #cb4532;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 1rem;
+}
+
+.modal .modal-content {
+  padding: 15px;
+}
+
+.add-book {
+  padding: 4px 8px;
+  border-radius: 9999px;
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  background-color: #f7c21e;
+  border: 2px solid #cb4532;
+  color: #1b2b2b;
+  font-size: 15px;
+}
+
+.add-book:hover {
+  background-color: #cb4532;
+  color: white;
+  border-color: #f7c21e;
+}/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,61 @@
+dialog {
+  opacity: 0;
+  scale: 0;
+  display: block;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+}
+dialog[open] {
+  opacity: 1;
+  scale: 2;
+}
+.modal-content {
+  background-color: $primaryColor;
+  border: 3px solid $secondColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $lighterGray;
+  border-radius: 8px;
+  button {
+    border: 1px solid $secondColor;
+    background-color: $yellow;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    margin-top: 1rem;
+    &:hover {
+      background-color: $darkerSecondColor;
+      border-color: $yellow;
+      color: white;
+    }
+  }
+  input {
+    background-color: $lightCream;
+    border: 2px solid $darkerSecondColor;
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 1rem;
+  }
+}
+.modal {
+  .modal-content {
+    padding: 15px;
+  }
+}
+.add-book {
+  padding: 4px 8px;
+  border-radius: 9999px;
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  background-color: $yellow;
+  border: 2px solid $darkerSecondColor;
+  color: $primaryColor;
+  font-size: 15px;
+}
+.add-book:hover {
+  background-color: $darkerSecondColor;
+  color: white;
+  border-color: $yellow;
+}
