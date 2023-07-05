@@ -11,7 +11,6 @@ function useBookList() {
       .then((res) => {
         setLoading(false);
         setBooks(res.data);
-        // console.log(res.data);
       })
       .catch((err) => {
         // Error handling
@@ -23,9 +22,6 @@ function useBookList() {
   useEffect(() => {
     getBooks();
   }, []);
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
   return { books, loading };
 }
 

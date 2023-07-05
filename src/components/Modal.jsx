@@ -1,27 +1,3 @@
-// import React, { useState } from "react";
-// import { Button, Box, Typography, Modal } from "@mui/material";
-
-// const Md = (props) => {
-//   const { open, handleOpen } = useState("close");
-//   return (
-//     <>
-//       <Button onClick={handleOpen}>Open modal</Button>
-//       <Modal
-//         open={open}
-//         onClose={handleOpen}
-//         aria-labelledby="modal-modal-title"
-//         aria-describedby="modal-modal-description"
-//       >
-//         <Box>
-//           <img src={props.image} width="500px" />
-//         </Box>
-//       </Modal>
-//     </>
-//   );
-// };
-
-// export default Md;
-
 import * as React from "react";
 import PropTypes from "prop-types";
 import Button from "@mui/material/Button";
@@ -29,10 +5,8 @@ import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import Typography from "@mui/material/Typography";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {

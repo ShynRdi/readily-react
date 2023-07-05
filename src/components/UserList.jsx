@@ -11,7 +11,6 @@ function UserList() {
       .then((res) => {
         setLoading(false);
         setUsers(res.data);
-        // console.log(res.data);
       })
       .catch((err) => {
         // Error handling

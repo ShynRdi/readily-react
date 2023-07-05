@@ -15,7 +15,6 @@ const Header = () => {
           alignItems: "center",
           width: "100%",
           backgroundColor: "#ffc107",
-          // position: "fixed",
           top: "0%",
           left: "0%",
           transition: "all 0.2s ease-out",

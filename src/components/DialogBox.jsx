@@ -19,7 +19,6 @@ export default function DialogBox() {
         className="modal"
       >
         <form action="#" method="dialog" className="modal-content">
-          {/* <div className="modal-content"> */}
           <label for="bookName">Book Name</label>
           <input type="text" name="bookName" id="bookName" />
 
@@ -32,9 +31,7 @@ export default function DialogBox() {
             Store File
           </button>
           <div id="fileData"></div>
-          {/* </div> */}
         </form>
-        {/* <button >close</button> */}
       </dialog>
       <button onClick={openDialog} className="add-book">
         Add Books

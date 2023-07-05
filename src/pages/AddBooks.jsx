@@ -45,7 +45,6 @@ const AddBooks = () => {
           className="add-books-form"
         >
           <Grid container spacing={2}>
-            {/* <Stack spacing={2} width={400}> */}
             <Grid item xs={12} md={6} lg={3}>
               <TextField
                 classes={{ root: "w-100" }}
@@ -100,7 +99,6 @@ const AddBooks = () => {
               </Button>
             </Grid>
           </Grid>
-          {/* </Stack> */}
         </form>
         <DevTool control={control} />
       </Box>

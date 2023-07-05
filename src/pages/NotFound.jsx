@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
@@ -18,8 +18,6 @@ const NotFound = () => {
           boxShadow:
             "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
           width: "75%",
-
-          // textAlign: "center",
         }}
       >
         <section class="page_404">
@@ -31,8 +29,6 @@ const NotFound = () => {
             alt=""
             height="400px"
           />
-
-          {/* <h2>Look like you're lost</h2> */}
         </section>
 
         <Box

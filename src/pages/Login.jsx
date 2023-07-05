@@ -2,7 +2,6 @@ import React from "react";
 import { Box, TextField, Button, Stack, Container } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
-import UserList from "../components/UserList";
 
 const Login = () => {
   const form = useForm({
@@ -65,7 +64,6 @@ const Login = () => {
           </Stack>
         </form>
         <DevTool control={control} />
-        {/* <UserList /> */}
       </Box>
     </Container>
   );
