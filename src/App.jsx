@@ -1,5 +1,3 @@
-import "./App.css";
-import "./assets/sass/app.scss";
 import { ThemeProvider, createTheme } from "@mui/material";
 import "./components/Routing";
 import Routing from "./components/Routing";

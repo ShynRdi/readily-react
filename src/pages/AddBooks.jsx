@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, TextField, Button, Grid, Container } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Button,
+  Grid,
+  Container,
+  Typography,
+} from "@mui/material";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { useNavigate } from "react-router-dom";
@@ -37,7 +44,7 @@ const AddBooks = () => {
             "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
         }}
       >
-        <h1>Add Your Books Details</h1>
+        <Typography variant="h3">Add Your Books Details</Typography>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -47,6 +54,11 @@ const AddBooks = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} md={6} lg={3}>
               <TextField
+                InputLabelProps={{ className: "input-label-style" }}
+                inputProps={{ className: "input-style" }}
+                FormHelperTextProps={{ className: "input-error-style" }}
+                // sx={{ bgcolor: "w/hite" }}
+
                 classes={{ root: "w-100" }}
                 type="text"
                 label="Book's name"
@@ -59,6 +71,9 @@ const AddBooks = () => {
             </Grid>
             <Grid item xs={12} md={6} lg={3}>
               <TextField
+                InputLabelProps={{ className: "input-label-style" }}
+                inputProps={{ className: "input-style" }}
+                FormHelperTextProps={{ className: "input-error-style" }}
                 classes={{ root: "w-100" }}
                 type="text"
                 label="Author's name"
@@ -71,6 +86,9 @@ const AddBooks = () => {
             </Grid>
             <Grid item xs={12} md={6} lg={3}>
               <TextField
+                InputLabelProps={{ className: "input-label-style" }}
+                inputProps={{ className: "input-style" }}
+                FormHelperTextProps={{ className: "input-error-style" }}
                 classes={{ root: "w-100" }}
                 type="text"
                 label="Write your own description"
@@ -83,6 +101,9 @@ const AddBooks = () => {
             </Grid>
             <Grid item xs={12} md={6} lg={3}>
               <TextField
+                InputLabelProps={{ className: "input-label-style" }}
+                inputProps={{ className: "input-style" }}
+                FormHelperTextProps={{ className: "input-error-style" }}
                 classes={{ root: "w-100" }}
                 type="text"
                 label="Books' Image ('URL')"

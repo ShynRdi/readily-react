@@ -35,17 +35,19 @@ const Login = () => {
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <Stack spacing={2} width={400}>
             <TextField
+              InputLabelProps={{ className: "input-label-style" }}
+              inputProps={{ className: "input-style" }}
+              FormHelperTextProps={{ className: "input-error-style" }}
               type="email"
               label="Email"
               {...register("email", { required: "Email is required" })}
               error={!!errors.email}
               helperText={errors.email?.message}
-              sx={{
-                boxShadow:
-                  "rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px",
-              }}
             />
             <TextField
+              InputLabelProps={{ className: "input-label-style" }}
+              inputProps={{ className: "input-style" }}
+              FormHelperTextProps={{ className: "input-error-style" }}
               type="password"
               label="Password"
               {...register("password", {
@@ -53,10 +55,6 @@ const Login = () => {
               })}
               error={!!errors.password}
               helperText={errors.password?.message}
-              sx={{
-                boxShadow:
-                  "rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px",
-              }}
             />
             <Button type="submit" variant="contained" color="primary">
               Login

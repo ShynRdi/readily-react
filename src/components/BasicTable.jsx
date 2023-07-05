@@ -53,14 +53,15 @@ export default function CustomizedTables() {
         </TableHead>
         <TableBody>
           {books.map((row) => (
-            <StyledTableRow key={row.name}>
+            <StyledTableRow key={row.id}>
               <StyledTableCell component="th" scope="row">
                 {row.title}
               </StyledTableCell>
               <StyledTableCell align="center">{row.author}</StyledTableCell>
               <StyledTableCell align="center">{row.details}</StyledTableCell>
-
-              <Md image={row.image} />
+              <StyledTableCell align="center">
+                <Md image={row.image} title={row.title} />
+              </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

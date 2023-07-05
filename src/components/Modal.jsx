@@ -7,6 +7,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import { Typography } from "@mui/material";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -19,7 +20,6 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 function BootstrapDialogTitle(props) {
   const { children, onClose, ...other } = props;
-
   return (
     <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
       {children}
@@ -48,14 +48,13 @@ BootstrapDialogTitle.propTypes = {
 
 export default function CustomizedDialogs(props) {
   const [open, setOpen] = React.useState(false);
-
   const handleClickOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
   };
-
+  console.log(props.title);
   return (
     <div>
       <Button
@@ -63,7 +62,7 @@ export default function CustomizedDialogs(props) {
         onClick={handleClickOpen}
         sx={{ justifySelf: "center" }}
       >
-        Open dialog
+        Show Picture
       </Button>
       <BootstrapDialog
         onClose={handleClose}
@@ -77,7 +76,7 @@ export default function CustomizedDialogs(props) {
           {props.title}
         </BootstrapDialogTitle>
         <DialogContent dividers>
-          <img src={props.image} width="500px" />
+          <img src={props.image} width="300px" />
         </DialogContent>
       </BootstrapDialog>
     </div>
