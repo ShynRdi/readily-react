@@ -10,11 +10,8 @@ const Login = () => {
       password: "",
     },
   });
-  const moz = useGetUsers();
-  console.log(moz);
+  const userData = useGetUsers();
   const onSubmit = (data) => {
-    if (true) {
-    }
     const userEmail = data.email;
     const userPass = data.password;
     console.log(userEmail, userPass);
