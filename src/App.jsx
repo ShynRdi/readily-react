@@ -1,6 +1,8 @@
 import { ThemeProvider, createTheme } from "@mui/material";
 import "./components/Routing";
 import Routing from "./components/Routing";
+import store from "./redux/store";
+import { Provider } from "react-redux";
 function App() {
   const theme = createTheme({
     components: {
@@ -13,7 +15,9 @@ function App() {
   });
   return (
     <ThemeProvider theme={theme}>
-      <Routing />
+      <Provider store={store}>
+        <Routing />
+      </Provider>
     </ThemeProvider>
   );
 }

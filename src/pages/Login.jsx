@@ -2,7 +2,7 @@ import React from "react";
 import { Box, TextField, Button, Stack, Container } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
-
+import useGetUsers from "../Hooks/useGetUsers";
 const Login = () => {
   const form = useForm({
     defaultValues: {
@@ -10,8 +10,14 @@ const Login = () => {
       password: "",
     },
   });
+  const moz = useGetUsers();
+  console.log(moz);
   const onSubmit = (data) => {
-    console.log(data);
+    if (true) {
+    }
+    const userEmail = data.email;
+    const userPass = data.password;
+    console.log(userEmail, userPass);
   };
   const { register, handleSubmit, formState, control } = form;
   const { errors } = formState;
