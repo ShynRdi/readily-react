@@ -9,6 +9,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import useBookList from "../Hooks/useBooksList";
 import Md from "../components/Modal";
+import useFetch from "../Hooks/useFetch";
+import { fetchBooks } from "../redux/bookList/bookListAction";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -35,10 +37,11 @@ function createData(title, author, description, image) {
 }
 
 export default function CustomizedTables() {
-  const { books, loading } = useBookList();
-  if (loading) {
-    return <div>is loading ...</div>;
-  }
+  // useBookList();
+  const { data: books } = useFetch(fetchBooks, "books");
+  // if (loading) {
+  //   return <div>is loading ...</div>;
+  // }
   console.log(books);
   return (
     <TableContainer component={Paper}>

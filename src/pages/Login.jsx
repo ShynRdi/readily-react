@@ -3,6 +3,9 @@ import { Box, TextField, Button, Stack, Container } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import useGetUsers from "../Hooks/useGetUsers";
+import { useNavigate } from "react-router-dom";
+import { fetchUsers } from "../redux/users/usersAction";
+import useFetch from "../Hooks/useFetch";
 const Login = () => {
   const form = useForm({
     defaultValues: {
@@ -10,11 +13,20 @@ const Login = () => {
       password: "",
     },
   });
-  const userData = useGetUsers();
+  const { data } = useFetch(fetchUsers, "users"); //useGetUsers();
+  const userData = data.map((user) => [user.username, user.password]);
+  console.log("hadi", userData);
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
     const userEmail = data.email;
     const userPass = data.password;
-    console.log(userEmail, userPass);
+    for (let user = 0; user < userData.length; user++) {
+      if (userData[user][0] == userEmail && userData[user][1] == userPass) {
+        navigate("/home");
+        localStorage.setItem("userName", userEmail);
+      }
+    }
   };
   const { register, handleSubmit, formState, control } = form;
   const { errors } = formState;

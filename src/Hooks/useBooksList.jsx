@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBooks } from "../redux/bookList/bookListAction";
 
-function useBookList() {
-  const [loading, setLoading] = useState(true);
-  const [books, setBooks] = useState([]);
-  const getBooks = () => {
-    setLoading(true);
-    axios
-      .get("https://6347ecf70484786c6e8cea40.mockapi.io/books")
-      .then((res) => {
-        setLoading(false);
-        setBooks(res.data);
-      })
-      .catch((err) => {
-        // Error handling
-        setLoading(false);
-        console.log(err);
-        return null;
-      });
-  };
+const useBookList = () => {
   useEffect(() => {
-    getBooks();
+    dispatch(fetchBooks());
   }, []);
-  return { books, loading };
-}
+  const dispatch = useDispatch();
+  const storeData = useSelector((state) => ({
+    books: state.books.list,
+    loading: state.books.loading,
+    error: state.error,
+  }));
+  const { books, loading, error } = storeData;
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
+  // if (error) {
+  //   return <div>Error: {error}</div>;
+  // }
+  const bookList = books.map((book) => [book.image, book.username]);
+
+  return bookList;
+  console.log(books);
+};
 export default useBookList;
