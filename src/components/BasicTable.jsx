@@ -7,7 +7,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import useBookList from "../Hooks/useBooksList";
 import Md from "../components/Modal";
 import useFetch from "../Hooks/useFetch";
 import { fetchBooks } from "../redux/bookList/bookListAction";
@@ -52,6 +51,7 @@ export default function CustomizedTables() {
             <StyledTableCell align="center">Author</StyledTableCell>
             <StyledTableCell align="center">Description</StyledTableCell>
             <StyledTableCell align="center">Image</StyledTableCell>
+            <StyledTableCell align="center">remove</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -62,6 +62,9 @@ export default function CustomizedTables() {
               </StyledTableCell>
               <StyledTableCell align="center">{row.author}</StyledTableCell>
               <StyledTableCell align="center">{row.details}</StyledTableCell>
+              <StyledTableCell align="center">
+                <Md image={row.image} title={row.title} />
+              </StyledTableCell>{" "}
               <StyledTableCell align="center">
                 <Md image={row.image} title={row.title} />
               </StyledTableCell>

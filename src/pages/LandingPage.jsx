@@ -1,7 +1,6 @@
 import { Box, Typography, Button, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 import React from "react";
-import Users from "../Hooks/useGetUsers";
 
 const LandingPage = () => {
   return (

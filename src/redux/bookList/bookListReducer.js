@@ -2,6 +2,7 @@ import {
   FETCH_BOOKS_REQUEST,
   FETCH_BOOKS_SUCCESS,
   FETCH_BOOKS_FAILURE,
+  FETCH_BOOKS_RESET,
 } from "./bookListAction";
 
 const initialState = {
@@ -29,6 +30,10 @@ const bookListReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: action.payload,
+      };
+    case FETCH_BOOKS_RESET:
+      return {
+        ...initialState,
       };
     default:
       return state;

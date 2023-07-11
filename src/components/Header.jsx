@@ -1,9 +1,16 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { resetBooks } from "../redux/bookList/bookListAction";
 const Header = () => {
   const baseURL = useLocation();
   const path = baseURL.pathname.toLowerCase();
+  const dispatch = useDispatch();
+
+  const logOut = () => {
+    dispatch(resetBooks());
+  };
   return (
     <>
       <Box
@@ -59,6 +66,7 @@ const Header = () => {
                   color={path == "/addbooks" ? "primary" : "warning"}
                   sx={{
                     fontWeight: "bold",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   Add Books
@@ -70,7 +78,9 @@ const Header = () => {
                   color="warning"
                   sx={{
                     fontWeight: "bold",
+                    whiteSpace: "nowrap",
                   }}
+                  onClick={logOut}
                 >
                   Log Out
                 </Button>

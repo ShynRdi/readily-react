@@ -15,7 +15,5 @@ export default function useFetch(action, entity) {
     error: state[entity].error,
   }));
 
-  //   const { data, loading, error } = storeData;
-
   return storeData;
 }

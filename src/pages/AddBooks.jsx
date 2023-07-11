@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   TextField,
@@ -11,7 +11,8 @@ import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { useNavigate } from "react-router-dom";
 import "../assets/sass/components/_addBooks.scss";
-
+import axios from "axios";
+let moz;
 const AddBooks = () => {
   const navigate = useNavigate();
   const form = useForm({
@@ -23,11 +24,34 @@ const AddBooks = () => {
     },
   });
   const onSubmit = (data) => {
+    const userName = localStorage.getItem("userName");
     console.log(data);
-    navigate("/home");
+    axios
+      .post("https://6347ecf70484786c6e8cea40.mockapi.io/books", {
+        image: data.imageUrl,
+        title: data.bookName,
+        details: data.description,
+        author: data.author,
+        persons: userName,
+      })
+      .then(() => navigate("/home"))
+      .catch(function (error) {
+        console.log(error);
+      });
   };
+  // useEffect(onSubmit())
   const { register, handleSubmit, formState, control } = form;
   const { errors } = formState;
+  // const onSubmit = (data) => {
+  // const userEmail = data.email;
+  // // const userPass = data.password;
+  // for (let user = 0; user < userData.length; user++) {
+  //   if (userData[user][0] == userEmail && userData[user][1] == userPass) {
+  //     navigate("/home");
+  //     localStorage.setItem("userName", userEmail);
+  //   }
+  // }
+  // };
   return (
     <Container>
       <Box
