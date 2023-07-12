@@ -5,8 +5,11 @@ import { fetchBooks } from "../redux/bookList/bookListAction";
 export default function useFetch(action, entity) {
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  function fetchData() {
     dispatch(action());
+  }
+  useEffect(() => {
+    fetchData();
   }, []);
 
   const storeData = useSelector((state) => ({
@@ -15,5 +18,5 @@ export default function useFetch(action, entity) {
     error: state[entity].error,
   }));
 
-  return storeData;
+  return { ...storeData, fetchData };
 }

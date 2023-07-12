@@ -10,6 +10,11 @@ import Paper from "@mui/material/Paper";
 import Md from "../components/Modal";
 import useFetch from "../Hooks/useFetch";
 import { fetchBooks } from "../redux/bookList/bookListAction";
+import { Button } from "@mui/material";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+// import forceUpdate
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -36,12 +41,29 @@ function createData(title, author, description, image) {
 }
 
 export default function CustomizedTables() {
-  // useBookList();
-  const { data: books } = useFetch(fetchBooks, "books");
-  // if (loading) {
-  //   return <div>is loading ...</div>;
-  // }
+  const { data: books, fetchData } = useFetch(fetchBooks, "books");
+  // const navigate = useNavigate();
+  // useEffect;
+  // const [fakeState, setFakeState] = useState("");
+
+  function removeHandler(e) {
+    const getId = e.target.id;
+    console.log(456, getId);
+    axios
+      .delete(`https://6347ecf70484786c6e8cea40.mockapi.io/books/${getId}`)
+      .then(() => {
+        // useFetch(fetchBooks, "books");
+        fetchData();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  // useEffect(() => {
+  //   setFakeState("Asd");
+  // }, []);
   console.log(books);
+  window.shayan = fetchData;
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -51,7 +73,7 @@ export default function CustomizedTables() {
             <StyledTableCell align="center">Author</StyledTableCell>
             <StyledTableCell align="center">Description</StyledTableCell>
             <StyledTableCell align="center">Image</StyledTableCell>
-            <StyledTableCell align="center">remove</StyledTableCell>
+            <StyledTableCell align="center">Remove</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -64,9 +86,16 @@ export default function CustomizedTables() {
               <StyledTableCell align="center">{row.details}</StyledTableCell>
               <StyledTableCell align="center">
                 <Md image={row.image} title={row.title} />
-              </StyledTableCell>{" "}
+              </StyledTableCell>
               <StyledTableCell align="center">
-                <Md image={row.image} title={row.title} />
+                <Button
+                  variant="contained"
+                  color="error"
+                  id={row.id}
+                  onClick={removeHandler}
+                >
+                  Remove
+                </Button>
               </StyledTableCell>
             </StyledTableRow>
           ))}

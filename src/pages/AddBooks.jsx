@@ -12,7 +12,6 @@ import { DevTool } from "@hookform/devtools";
 import { useNavigate } from "react-router-dom";
 import "../assets/sass/components/_addBooks.scss";
 import axios from "axios";
-let moz;
 const AddBooks = () => {
   const navigate = useNavigate();
   const form = useForm({
