@@ -12,30 +12,41 @@ import { DevTool } from "@hookform/devtools";
 import { useNavigate } from "react-router-dom";
 import { fetchUsers } from "../redux/users/usersAction";
 import useFetch from "../Hooks/useFetch";
+import { fetchPostUsers } from "../redux/signUpUsers/signUpUsersAction";
 import { Link } from "react-router-dom";
-const Login = () => {
+
+const Signup = () => {
   const form = useForm({
     defaultValues: {
       email: "",
       password: "",
     },
   });
-  const { register, handleSubmit, formState, control } = form;
-  const { data } = useFetch(fetchUsers, "users"); //useGetUsers();
-  const userData = data.map((user) => [user.username, user.password]);
-  console.log("hadi", userData);
+  const { register, handleSubmit, formState, control, getValues } = form;
+
+  const { data, fetchData } = useFetch(fetchPostUsers, "signs", true);
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
     const userEmail = data.email;
     const userPass = data.password;
-    for (let user = 0; user < userData.length; user++) {
-      if (userData[user][0] == userEmail && userData[user][1] == userPass) {
-        navigate("/home");
-        localStorage.setItem("userName", userEmail);
-      }
-    }
+    fetchData({ username: userEmail, password: userPass });
+    navigate("/home");
+    localStorage.setItem("userName", userEmail);
+    // for (let user = 0; user < userData.length; user++) {
+    //   if (userData[user][0] == userEmail && userData[user][1] == userPass) {
+    //   }
+    // }
   };
+  //   const signUp = () => {
+  //     // const values = getValues();
+  //     // // const { signUpData } = useFetch(
+  //     // //   fetchPostUsers(values.email, values.password),
+  //     // //   signs
+  //     // // );
+  //     // fetchData({ email: values.email, password: values.password });
+  //     // alert("moz");
+  //   };
   const { errors } = formState;
   return (
     <Container>
@@ -53,7 +64,7 @@ const Login = () => {
             "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
         }}
       >
-        <h1>Login</h1>
+        <h1>Sign up</h1>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <Stack spacing={2} width={400}>
             <TextField
@@ -78,17 +89,18 @@ const Login = () => {
               error={!!errors.password}
               helperText={errors.password?.message}
             />
+
             <Button
               type="submit"
               variant="contained"
               color="primary"
               sx={{ width: "100%" }}
             >
-              Login
+              Sign Up
             </Button>
-            <Link to="/signup">
+            <Link to="/login">
               <Typography variant="body1" color="initial">
-                Don't have an account let's make one
+                Already have an account let's login
               </Typography>
             </Link>
           </Stack>
@@ -99,4 +111,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
