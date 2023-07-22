@@ -61,7 +61,12 @@ const Signup = () => {
               FormHelperTextProps={{ className: "input-error-style" }}
               type="username"
               label="Username"
-              {...register("username", { required: "username is required" })}
+              {...register("username", {
+                required: "true",
+                min: 2,
+
+                pattern: /[a-zA-Z1-9_]{2,36}/,
+              })}
               error={!!errors.username}
               helperText={errors.username?.message}
             />
@@ -72,7 +77,9 @@ const Signup = () => {
               type="password"
               label="Password"
               {...register("password", {
-                required: "Password is required",
+                required: true,
+                min: 2,
+                pattern: /[a-zA-Z1-9!@#$%^&*_()]{2,36}/,
               })}
               error={!!errors.password}
               helperText={errors.password?.message}

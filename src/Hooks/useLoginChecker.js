@@ -12,6 +12,7 @@ export default function useLoginChecker() {
     ) {
       console.log(userLocation);
       navigate("/");
-    }
+      {...register("password", {
+        required: "Password is required",    }
   }, []);
 }

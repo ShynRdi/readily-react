@@ -49,7 +49,9 @@ const Header = () => {
             alignItems: "center",
           }}
         >
-          {baseURL.pathname == "/" || path == "/login" ? null : (
+          {baseURL.pathname == "/" ||
+          path == "/login" ||
+          path == "/signup" ? null : (
             <>
               <Link to={path == "/home" ? "#" : "/home"} className="home-link">
                 <Button
