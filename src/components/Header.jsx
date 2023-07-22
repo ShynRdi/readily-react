@@ -3,14 +3,19 @@ import { Box, Button } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { resetBooks } from "../redux/bookList/bookListAction";
+import useLoginChecker from "../Hooks/useLoginChecker";
+
 const Header = () => {
   const baseURL = useLocation();
   const path = baseURL.pathname.toLowerCase();
   const dispatch = useDispatch();
-
   const logOut = () => {
     dispatch(resetBooks());
   };
+  const moz = useLoginChecker();
+  console.log("object", moz);
+  moz;
+
   return (
     <>
       <Box

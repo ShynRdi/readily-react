@@ -64,6 +64,7 @@ export default function CustomizedTables() {
   // }, []);
   console.log(books);
   window.shayan = fetchData;
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
