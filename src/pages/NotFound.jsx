@@ -11,12 +11,12 @@ const NotFound = () => {
           flexDirection: "column",
           gap: " 1rem",
           alignItems: "center",
-          marginTop: "135px",
           backgroundColor: "#ffc107",
           padding: "5rem",
           border: "0.5rem solid #1976D2",
           boxShadow:
             "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
+          justifyContent: "space-between",
           width: "75%",
         }}
       >
@@ -27,7 +27,7 @@ const NotFound = () => {
           <img
             src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif"
             alt=""
-            height="400px"
+            width="400px"
           />
         </section>
 

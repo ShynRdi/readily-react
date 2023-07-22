@@ -12,9 +12,6 @@ export default function useLoginChecker() {
     ) {
       console.log(userLocation);
       navigate("/");
-      // return "moz";
-    } else {
-      navigate("/home");
     }
   }, []);
 }

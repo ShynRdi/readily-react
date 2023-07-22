@@ -83,8 +83,12 @@ export default function CustomizedTables() {
               <StyledTableCell component="th" scope="row">
                 {row.title}
               </StyledTableCell>
-              <StyledTableCell align="center">{row.author}</StyledTableCell>
-              <StyledTableCell align="center">{row.details}</StyledTableCell>
+              <StyledTableCell align="center" style={{ textAlign: "left" }}>
+                {row.author}
+              </StyledTableCell>
+              <StyledTableCell align="center" style={{ textAlign: "left" }}>
+                {row.details}
+              </StyledTableCell>
               <StyledTableCell align="center">
                 <Md image={row.image} title={row.title} />
               </StyledTableCell>

@@ -1,11 +1,15 @@
 .page_404 {
-  width: 80%;
+  width: 70%;
   padding: 20px;
   background-color: #fff;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
 }
 .page_404 img {
-  width: 100%;
+  // width: 100%;
+  align-self: center;
 }
 .four_zero_four_bg h1 {
   font-size: 80px;
@@ -14,4 +18,6 @@
 .main-part {
   display: flex;
   justify-content: center;
+
+  height: 80vh;
 }
