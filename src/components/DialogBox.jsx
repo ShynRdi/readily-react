@@ -1,5 +1,4 @@
 import { useRef } from "react";
-// import '../assets/sass/components/_dialogBox.scss';
 
 export default function DialogBox() {
   const dialog = useRef();

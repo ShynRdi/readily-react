@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const form = useForm({
     defaultValues: {
-      email: "",
+      username: "",
       password: "",
     },
   });
@@ -27,12 +27,12 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    const userEmail = data.email;
+    const username = data.username;
     const userPass = data.password;
     for (let user = 0; user < userData.length; user++) {
-      if (userData[user][0] == userEmail && userData[user][1] == userPass) {
+      if (userData[user][0] == username && userData[user][1] == userPass) {
         navigate("/home");
-        localStorage.setItem("userName", userEmail);
+        localStorage.setItem("userName", username);
       }
     }
   };
@@ -60,11 +60,11 @@ const Login = () => {
               InputLabelProps={{ className: "input-label-style" }}
               inputProps={{ className: "input-style" }}
               FormHelperTextProps={{ className: "input-error-style" }}
-              type="email"
-              label="Email"
-              {...register("email", { required: "Email is required" })}
-              error={!!errors.email}
-              helperText={errors.email?.message}
+              type="username"
+              label="Username"
+              {...register("username", { required: "Username is required" })}
+              error={!!errors.username}
+              helperText={errors.username?.message}
             />
             <TextField
               InputLabelProps={{ className: "input-label-style" }}

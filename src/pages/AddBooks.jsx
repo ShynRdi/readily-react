@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Box,
   TextField,
@@ -38,19 +38,8 @@ const AddBooks = () => {
         console.log(error);
       });
   };
-  // useEffect(onSubmit())
   const { register, handleSubmit, formState, control } = form;
   const { errors } = formState;
-  // const onSubmit = (data) => {
-  // const userEmail = data.email;
-  // // const userPass = data.password;
-  // for (let user = 0; user < userData.length; user++) {
-  //   if (userData[user][0] == userEmail && userData[user][1] == userPass) {
-  //     navigate("/home");
-  //     localStorage.setItem("userName", userEmail);
-  //   }
-  // }
-  // };
   return (
     <Container>
       <Box
@@ -80,8 +69,6 @@ const AddBooks = () => {
                 InputLabelProps={{ className: "input-label-style" }}
                 inputProps={{ className: "input-style" }}
                 FormHelperTextProps={{ className: "input-error-style" }}
-                // sx={{ bgcolor: "w/hite" }}
-
                 classes={{ root: "w-100" }}
                 type="text"
                 label="Book's name"

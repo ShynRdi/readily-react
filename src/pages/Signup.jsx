@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   const form = useForm({
     defaultValues: {
-      email: "",
+      username: "",
       password: "",
     },
   });
@@ -28,25 +28,13 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    const userEmail = data.email;
+    const username = data.username;
     const userPass = data.password;
-    fetchData({ username: userEmail, password: userPass });
+    fetchData({ username: username, password: userPass });
     navigate("/home");
-    localStorage.setItem("userName", userEmail);
-    // for (let user = 0; user < userData.length; user++) {
-    //   if (userData[user][0] == userEmail && userData[user][1] == userPass) {
-    //   }
-    // }
+    localStorage.setItem("userName", username);
   };
-  //   const signUp = () => {
-  //     // const values = getValues();
-  //     // // const { signUpData } = useFetch(
-  //     // //   fetchPostUsers(values.email, values.password),
-  //     // //   signs
-  //     // // );
-  //     // fetchData({ email: values.email, password: values.password });
-  //     // alert("moz");
-  //   };
+
   const { errors } = formState;
   return (
     <Container>
@@ -71,11 +59,11 @@ const Signup = () => {
               InputLabelProps={{ className: "input-label-style" }}
               inputProps={{ className: "input-style" }}
               FormHelperTextProps={{ className: "input-error-style" }}
-              type="email"
-              label="Email"
-              {...register("email", { required: "Email is required" })}
-              error={!!errors.email}
-              helperText={errors.email?.message}
+              type="username"
+              label="Username"
+              {...register("username", { required: "username is required" })}
+              error={!!errors.username}
+              helperText={errors.username?.message}
             />
             <TextField
               InputLabelProps={{ className: "input-label-style" }}

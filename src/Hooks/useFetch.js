@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from "../redux/users/usersAction";
-import { fetchBooks } from "../redux/bookList/bookListAction";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function useFetch(action, entity, preventCallOnMount) {
   const dispatch = useDispatch();
