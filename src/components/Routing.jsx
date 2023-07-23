@@ -13,7 +13,7 @@ const Routing = () => {
     <>
       <BrowserRouter basename={import.meta.env.DEV ? "/" : "/readily-react/"}>
         <Routes>
-          <Route path="/readily-react/" element={<Layout />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<LandingPage />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
