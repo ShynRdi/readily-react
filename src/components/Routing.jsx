@@ -11,7 +11,7 @@ import Signup from "../pages/Signup";
 const Routing = () => {
   return (
     <>
-      <BrowserRouter3 basename={import.meta.env.DEV ? "/" : "/readily-react/"}>
+      <BrowserRouter basename={import.meta.env.DEV ? "/" : "/readily-react/"}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<LandingPage />} />
@@ -22,7 +22,7 @@ const Routing = () => {
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
-      </BrowserRouter3>
+      </BrowserRouter>
     </>
   );
 };
