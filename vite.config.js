@@ -7,11 +7,8 @@ import react from "@vitejs/plugin-react";
 // })
 export default defineConfig(({ command }) => {
   const config = {
-    build: {
-      outDir: ".dist",
-    },
     plugins: [react()],
-    base: "/",
+    base: "/readily-react/",
   };
   if (command !== "serve") {
     config.base = "/readily-react/";
