@@ -23,7 +23,6 @@ const Login = () => {
   const { register, handleSubmit, formState, control } = form;
   const { data } = useFetch(fetchUsers, "users"); //useGetUsers();
   const userData = data.map((user) => [user.username, user.password]);
-  console.log("hadi", userData);
   const navigate = useNavigate();
 
   const onSubmit = (data) => {

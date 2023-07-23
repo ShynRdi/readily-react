@@ -24,7 +24,6 @@ const AddBooks = () => {
   });
   const onSubmit = (data) => {
     const userName = localStorage.getItem("userName");
-    console.log(data);
     axios
       .post("https://6347ecf70484786c6e8cea40.mockapi.io/books", {
         image: data.imageUrl,

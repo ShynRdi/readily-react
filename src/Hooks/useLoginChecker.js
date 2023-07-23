@@ -10,7 +10,6 @@ export default function useLoginChecker() {
       (username == null || username == undefined || username == "") &&
       userLocation.pathname !== "/login"
     ) {
-      console.log(userLocation);
       navigate("/");
     }
   }, []);

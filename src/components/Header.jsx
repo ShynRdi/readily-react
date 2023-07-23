@@ -12,9 +12,8 @@ const Header = () => {
   const logOut = () => {
     dispatch(resetBooks());
   };
-  const moz = useLoginChecker();
-  console.log("object", moz);
-  moz;
+  const loginChecker = useLoginChecker();
+  loginChecker;
 
   return (
     <>

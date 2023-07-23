@@ -8,7 +8,6 @@ const RemoveButton = (props) => {
   function removeHandler(e) {
     const newId = props.id;
     const getId = e.target.newId;
-    console.log(456, getId);
     axios
       .delete(`https://6347ecf70484786c6e8cea40.mockapi.io/books/${getId}`)
       .then(() => <p></p>)

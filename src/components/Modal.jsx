@@ -53,7 +53,6 @@ export default function CustomizedDialogs(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  console.log(props.title);
   return (
     <div>
       <Button

@@ -43,7 +43,6 @@ export default function CustomizedTables() {
   const { data: books, fetchData } = useFetch(fetchBooks, "books");
   function removeHandler(e) {
     const getId = e.target.id;
-    console.log(456, getId);
     axios
       .delete(`https://6347ecf70484786c6e8cea40.mockapi.io/books/${getId}`)
       .then(() => {
@@ -53,8 +52,6 @@ export default function CustomizedTables() {
         console.log(error);
       });
   }
-
-  console.log(books);
   window.shayan = fetchData;
 
   return (
